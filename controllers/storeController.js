@@ -11,7 +11,8 @@ router.get("/catalogue", function(req, res) {
     var hbsObject = {
       retail: data
     };
-    console.log(hbsObject);;
+    console.log(hbsObject);
+    res.render("index", hbsObject);
   });
 });
 

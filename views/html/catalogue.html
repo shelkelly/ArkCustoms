@@ -36,7 +36,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Catalogue</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">||</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#catalogue">Home</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">Home</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <div class="container">
             <div class="masthead-subheading">Ark Custom Laser Creations</div>
             <div class="masthead-heading text-uppercase">Catalogue</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Show Me More</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Show Me More</a>
         </div>
     </header>
     <!-- Portfolio Grid-->
@@ -54,7 +54,20 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Catalogue</h2>
-                <h3 class="section-subheading text-muted">A quick look at what we have to offer.</h3>
+                <h3 class="section-subheading text-muted">Narrow your search:
+                    <p></p><form action="/action_page.php">
+                    <label for="cars">Product Type:</label>
+                    <select id="cars" name="cars">
+                      <option value="volvo">Wood</option>
+                      <option value="saab">Metal</option>
+                      <option value="fiat">Glass</option>
+                    </select>
+                    <label for="cars"> || Price Sort:</label>
+                    <select id="cars" name="cars">
+                      <option value="volvo">High to low</option>
+                      <option value="saab">Low to high</option>
+                    </select>
+                     || <input type="submit"></h3>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
@@ -443,7 +456,7 @@
     <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
     <!--ShelBytes JS-->
-    <script src="../js/store.js"></script>
+    <script src="../js/catalogue.js"></script>
 </body>
 
 </html>

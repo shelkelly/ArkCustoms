@@ -50,6 +50,7 @@ var orm = {
           throw err;
         }
         cb(result);
+        console.log("eyoooo")
       });
     },
     create: function(table, cols, vals, cb) {

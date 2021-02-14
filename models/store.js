@@ -5,6 +5,7 @@ var store = {
   all: function(cb) {
     orm.all("retail", function(res) {
       cb(res);
+      console.log("hayyyy")
     });
   },
   // The variables cols and vals are arrays.
