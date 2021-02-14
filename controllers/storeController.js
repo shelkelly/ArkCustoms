@@ -6,13 +6,12 @@ var router = express.Router();
 var store = require("../models/store.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
+router.get("/catalogue", function(req, res) {
   store.all(function(data) {
     var hbsObject = {
-      cats: data
+      retail: data
     };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(hbsObject);;
   });
 });
 
