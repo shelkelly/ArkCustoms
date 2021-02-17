@@ -1,5 +1,40 @@
-<div class="row">
-    {{#each catalogue}}
-        {{> catalogue/catalogue-block }}
-    {{/each}}
+<div class="container">
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">Catalogue</h2>
+        <h3 class="section-subheading text-muted">Narrow your search:
+            <p></p>
+            <form action="/action_page.php">
+                <label for="cars">Product Type:</label>
+                <select id="cars" name="cars">
+                    <option value="volvo">Wood</option>
+                    <option value="saab">Metal</option>
+                    <option value="fiat">Glass</option>
+                </select>
+                <label for="cars"> || Price Sort:</label>
+                <select id="cars" name="cars">
+                    <option value="volvo">High to low</option>
+                    <option value="saab">Low to high</option>
+                </select>
+                || <input type="submit">
+        </h3>
+    </div>
+
+    <div class="row">
+        {{#each retail}}
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="portfolio-item" data-id="{{this.id}}">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img class="img-fluid" src="{{this.imgurl}}" alt="" />
+                </a>
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">{{this.product}}</div>
+                    <div class="portfolio-caption-subheading text-muted">{{this.price}}</div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </div>

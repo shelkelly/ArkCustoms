@@ -13,6 +13,18 @@ router.get("/catalogue", function(req, res) {
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
+    console.log("hello from the controller.")
+  });
+});
+
+router.get("/product/:id", function(req, res) {
+  store.all(function(data) {
+    var hbsObject = {
+      product: data
+    };
+    console.log(hbsObject);
+    res.render("product", hbsObject);
+    console.log("hello from the controller.")
   });
 });
 

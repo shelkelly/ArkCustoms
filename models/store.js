@@ -8,6 +8,13 @@ var store = {
       console.log("hayyyy")
     });
   },
+//PRODUCT PAGE
+  select: function(cb) {
+    orm.select("retail", condition, cb, function(res) {
+      cb(res);
+      console.log("hayyyy2")
+    });
+  },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create("customdefault", cols, vals, function(res) {
