@@ -5,14 +5,12 @@ var store = {
   all: function(cb) {
     orm.all("retail", function(res) {
       cb(res);
-      console.log("hayyyy")
     });
   },
 //PRODUCT PAGE
-  select: function(cb) {
-    orm.select("retail", condition, cb, function(res) {
+  select: function(newID, cb) {
+    orm.select(newID, function(res) {
       cb(res);
-      console.log("hayyyy2")
     });
   },
   // The variables cols and vals are arrays.

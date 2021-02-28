@@ -1,11 +1,20 @@
+
+
 $(document).ready(function() {
 
-    $(".portfolio-item").on("click", function (event) {
-        event.preventDefault();
+    function renderProduct() {
+        if (this.id === id) {
+            $(".product").load("../product.handlebars");
+            window.location.pathname = '/product/:' + id
+        }
+    }
 
-        console.log(this.id);
+    $(".portfolio-item").on("click", function (event, res) {
 
-        window.location.pathname = '/product/:id'
+        id = ($(this).data("id"))
+        product = ($(this).data(this))
+
+        renderProduct();
 
     });
 

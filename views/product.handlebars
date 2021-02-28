@@ -8,28 +8,27 @@
             </div>
             <div class="row">
                 <div class="col-lg">
-                    {{log 'id' this.id 'product'}}
-                    {{#each retail}}
-                    {{log 'id' this.id 'product'}}
-                    <div class="portfolio-item">
+
+                    {{#each product}}
+
+                    <div class="portfolio-item" data-id={{this.id}}>
                         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
 
-                            <img class="img-fluid" src="../assets/img/store/11763.jpg" alt="" />
+                            <img class="img-fluid" src="{{this.imgurl}}" alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Glass</div>
-                            <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            <div class="portfolio-caption-heading">{{this.product}}</div>
+                            <div class="portfolio-caption-subheading text-muted">{{this.this.price}}</div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center" id="itemInfoOptions">
-                        <h4 id="productName">Glass</h4>
-                        <p class="large text-muted" id="productDescription">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Aut eaque,
-                            laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                        <h4 id="productName">{{this.product}}</h4>
+                        <p class="large text-muted" id="productDescription">{{this.description}}</p>
                     </div>
                 </div>
+
                 {{/each}}
 
                 <!-- ////////////////////////////////////

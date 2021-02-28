@@ -49,17 +49,19 @@ var orm = {
           throw err;
         }
         cb(result);
-        console.log("eyoooo from orm all")
       });
     },
 //PRODUCT PAGE
     select: function(condition, cb) {
-      var queryString = "SELECT * FROM arkstore_db.retail WHERE id = " + condition + ";";
+      var queryString = "SELECT id, product, description, optiontype, optiontype2, price, imgurl FROM arkstore_db.retail WHERE" + condition;
+      console.log(queryString)
       connection.query(queryString, condition, function(err, result) {
         if (err) {
           throw err;
         }
         cb(result);
+        states = JSON.stringify(result)
+        console.log(states)
         console.log(result)
       });
     },

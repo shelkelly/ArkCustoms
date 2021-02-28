@@ -12,19 +12,27 @@ router.get("/catalogue", function(req, res) {
       retail: data
     };
     console.log(hbsObject);
+    
     res.render("index", hbsObject);
-    console.log("hello from the controller.")
   });
 });
 
 router.get("/product/:id", function(req, res) {
-  store.all(function(data) {
+
+  var id = req.params.id
+  var newID = id.replace(":", "");
+  var condition = " id IN ('" +newID+ "');"
+
+  store.select(condition, function(data) {
+
+    
     var hbsObject = {
       product: data
     };
+
     console.log(hbsObject);
     res.render("product", hbsObject);
-    console.log("hello from the controller.")
+    console.log("hello from the controller select one.")
   });
 });
 
