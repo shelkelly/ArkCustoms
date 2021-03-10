@@ -60,14 +60,11 @@ var orm = {
           throw err;
         }
         cb(result);
-        states = JSON.stringify(result)
-        console.log(states)
-        console.log(result)
       });
     },
 
-    create: function(table, cols, vals, cb) {
-      var queryString = "INSERT INTO " + table;
+    create: function(cols, vals, cb) {
+      var queryString = "INSERT INTO arkstore_db.customdefault";
   
       queryString += " (";
       queryString += cols.toString();

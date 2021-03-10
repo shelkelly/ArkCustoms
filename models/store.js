@@ -13,9 +13,11 @@ var store = {
       cb(res);
     });
   },
+
+  //CART PAGE
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
-    orm.create("customdefault", cols, vals, function(res) {
+    orm.create(cols, vals, function(res) {
       cb(res);
     });
   },

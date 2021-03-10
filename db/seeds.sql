@@ -4,3 +4,6 @@ INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `opt
 INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('glasses', '4 glasses', '0', '0', '$15');
 INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('blanket basket', 'a holder for your blankies', '1', '0', '$45');
 INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('yeti cup', 'get a custom yeti', '1', '1', '$13');
+
+
+INSERT INTO `arkstore_db`.`customdefault` (`id`, `product`, `customtext`, `customfont`) VALUES ('6', 'cutting board', 'hiya', 'arial');

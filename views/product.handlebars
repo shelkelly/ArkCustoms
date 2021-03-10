@@ -7,10 +7,9 @@
                 <h3 class="section-subheading text-muted">See the details!</h3>
             </div>
             <div class="row">
+                {{#each product}}
+
                 <div class="col-lg">
-
-                    {{#each product}}
-
                     <div class="portfolio-item" data-id={{this.id}}>
                         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
 
@@ -18,7 +17,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{this.product}}</div>
-                            <div class="portfolio-caption-subheading text-muted">{{this.this.price}}</div>
+                            <div class="portfolio-caption-subheading text-muted">{{this.price}}</div>
                         </div>
                     </div>
                 </div>
@@ -46,7 +45,7 @@
                         <div class="form-group row">
                             <label for="inputText" class="col-sm-2 col-form-label"><b>Text:</b></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputText"
+                                <input type="text" class="form-control" id="customText"
                                     placeholder="Enter up to 20 characters">
                             </div>
                         </div>
@@ -55,47 +54,47 @@
                         <div class="form-group row">
                             <div class="col-sm-2"><b>Fonts:</b></div>
                             <div class="dropdown col-sm-2">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Options
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Arial</a>
-                                    <a class="dropdown-item" href="#">Sans Serif</a>
-                                    <a class="dropdown-item" href="#">Cursive</a>
-                                </div>
+                                <label for="fonts">Choose a font:</label>
+                                <select id="fonts" name="fontlist" form="fontform">
+                                    <option value="Arial" id="customfont">Arial</option>
+                                    <option value="SansSerif" id="customfont">Sans Serif</option>
+                                    <option value="Cursive" id="customcont">Cursive</option>
+                                </select>
                             </div>
                         </div>
 
-                        <!-- IMAGE DROPDOWN -->
+                        <!-- OPTION DROPDOWN -->
                         <div class="form-group row">
-                            <div class="col-sm-2"><b>Image:</b></div>
+                            <div class="col-sm-2"><b>Customize:</b></div>
                             <div class="dropdown col-sm-2">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Options
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Arial</a>
-                                    <a class="dropdown-item" href="#">Sans Serif</a>
-                                    <a class="dropdown-item" href="#">Cursive</a>
-                                </div>
+                                <label for="options">Choose another option:</label>
+                                <select id="options" name="optionlist" form="optionform">
+                                    <option value="1" id="customoption">1</option>
+                                    <option value="2" id="customoption">2</option>
+                                    <option value="3" id="customoption">3</option>
+                                </select>
                             </div>
                         </div>
 
-                        <!-- FILE INPUT-->
+                        <!-- IMG DROPDOWN-->
                         <div class="form-group">
                             <div class="col-sm-2">
-                                <label for="exampleFormControlFile1"><b>File Input</b>:</b></label>
+                                <label for="exampleFormControlFile1"><b>Image</b>:</b></label>
                             </div>
                             <div class="col-sm">
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <label for="imgs">Choose one of our images:</label>
+                                <select id="imgs" name="imglist" form="imgform">
+                                    <option value="cat" id="customimg">cat</option>
+                                    <option value="dog" id="customimg">dog</option>
+                                    <option value="cow" id="customimg">cow</option>
+                                </select>
                             </div>
                         </div>
 
+                        <!--SUBMIT-->
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary">Add to Basket</button>
+                                <button type="submit" class="btn btn-primary" id="addCart">Add to Cart</button>
                             </div>
                         </div>
                     </form>
