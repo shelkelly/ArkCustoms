@@ -1,9 +1,9 @@
-INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('cutting board', 'a lovely cutting board', '1', '0', '$23');
-INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('ornament', 'a christmas ornament', '1', '1', '$10');
-INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('dish set', '4 dishes', '1', '0', '$25');
-INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('glasses', '4 glasses', '0', '0', '$15');
-INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('blanket basket', 'a holder for your blankies', '1', '0', '$45');
-INSERT INTO `arkstore_db`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('yeti cup', 'get a custom yeti', '1', '1', '$13');
+INSERT INTO `ccnkx728pkfzzl6u`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('cutting board', 'a lovely cutting board', '1', '0', '$23', 'https://github.com/shelkelly/ArkCustoms/blob/master/views/assets/img/store/11763.jpg?raw=true');
+INSERT INTO `ccnkx728pkfzzl6u`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('ornament', 'a christmas ornament', '1', '1', '$10', 'https://github.com/shelkelly/ArkCustoms/blob/master/views/assets/img/store/11763.jpg?raw=true');
+INSERT INTO `ccnkx728pkfzzl6u`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('dish set', '4 dishes', '1', '0', '$25', 'https://github.com/shelkelly/ArkCustoms/blob/master/views/assets/img/store/11763.jpg?raw=true');
+INSERT INTO `ccnkx728pkfzzl6u`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('glasses', '4 glasses', '0', '0', '$15', 'https://github.com/shelkelly/ArkCustoms/blob/master/views/assets/img/store/11763.jpg?raw=true');
+INSERT INTO `ccnkx728pkfzzl6u`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('blanket basket', 'a holder for your blankies', '1', '0', '$45', 'https://github.com/shelkelly/ArkCustoms/blob/master/views/assets/img/store/11763.jpg?raw=true');
+INSERT INTO `ccnkx728pkfzzl6u`.`retail` (`product`, `description`, `optiontype`, `optiontype2`, `price`) VALUES ('yeti cup', 'get a custom yeti', '1', '1', '$13', 'https://github.com/shelkelly/ArkCustoms/blob/master/views/assets/img/store/11763.jpg?raw=true');
 
 
-INSERT INTO `arkstore_db`.`customdefault` (`id`, `product`, `customtext`, `customfont`) VALUES ('6', 'cutting board', 'hiya', 'arial');
+INSERT INTO `ccnkx728pkfzzl6u`.`customdefault` (`id`, `product`, `customtext`, `customfont`) VALUES ('6', 'cutting board', 'hiya', 'arial');

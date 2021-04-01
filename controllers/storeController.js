@@ -38,7 +38,7 @@ router.get("/product/:id", function (req, res) {
 
 router.post("/cart", function (req, res) {
 
-  var body= req.body;
+  var body = req.body;
   console.log(body)
 
  // itemsID = $('.portfolio-item').attr('data-id');
@@ -52,7 +52,7 @@ router.post("/cart", function (req, res) {
     console.log(result)
 
     var hbsObject = {
-      customproduct: result
+      cartitem: result
     };
     console.log(hbsObject);
     res.render("cart", hbsObject)

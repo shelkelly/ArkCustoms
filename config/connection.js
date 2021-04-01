@@ -1,13 +1,20 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: "127.0.0.1",
+require('dotenv').config();
+
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+connection = mysql.createConnection({
+  host: "lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
   port: 3306,
-  user: "root",
-  password: "E122w920!",
-  database: "arkstore_db"
+  user: "	cvj7bu1g1hg0uecp",
+  password: "wr6xtk34eunldga7",
+  database: "ccnkx728pkfzzl6u"
 });
+}
 
 // Make connection.
 connection.connect(function(err) {

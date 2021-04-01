@@ -44,7 +44,7 @@ function objToSql(ob) {
 // Object for all our SQL statement functions.
 var orm = {
     all: function(req, cb) {
-      connection.query("SELECT * FROM arkstore_db.retail", function(err, result) {
+      connection.query("SELECT * FROM ccnkx728pkfzzl6u.retail", function(err, result) {
         if (err) {
           throw err;
         }
@@ -53,7 +53,7 @@ var orm = {
     },
 //PRODUCT PAGE
     select: function(condition, cb) {
-      var queryString = "SELECT id, product, description, optiontype, optiontype2, price, imgurl FROM arkstore_db.retail WHERE" + condition;
+      var queryString = "SELECT id, product, description, optiontype, optiontype2, price, imgurl FROM ccnkx728pkfzzl6u.retail WHERE" + condition;
       console.log(queryString)
       connection.query(queryString, condition, function(err, result) {
         if (err) {
@@ -64,7 +64,7 @@ var orm = {
     },
 
     create: function(cols, vals, cb) {
-      var queryString = "INSERT INTO arkstore_db.customdefault";
+      var queryString = "INSERT INTO ccnkx728pkfzzl6u.customdefault";
   
       queryString += " (";
       queryString += cols.toString();
