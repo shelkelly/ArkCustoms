@@ -2,8 +2,12 @@
 $(document).ready(function () {
 
     var cartitem = [];
+    var cartQuantity = 0;
 
     $("#addCart").on("click", function (event, res) {
+
+        cartQuantity++;
+        console.log(cartQuantity)
 
         event.preventDefault();
 
@@ -14,9 +18,9 @@ $(document).ready(function () {
             id: window.itemsID,
             product: $("div.portfolio-caption-heading").text(),
             customtext: $("#customText").val().trim(),
-            customfont: $("#customfont").val(),
-            customoption: $("#customoption").val(),
-            customimg: $("#customimg").val()
+            customfont: $("#fonts").val(),
+            customoption: $("#options").val(),
+            customimg: $("#imgs").val()
         };
 
         cartitem.push(newcartitem);
@@ -26,7 +30,8 @@ $(document).ready(function () {
         storeCartItems();
 
         function storeCartItems() {
-            localStorage.setItem("cartitem", JSON.stringify(cartitem))
+            localStorage.setItem("cartitem", JSON.stringify(cartitem));
+            localStorage.setItem("cartQuantity", cartQuantity);
         }
 
         window.location.pathname = '/cart';
