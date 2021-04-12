@@ -4,9 +4,29 @@ var cartitem = [];
 var cartCount = 0;
 var cartlist = document.querySelector("#cartlist");
 var portfolioCaption = document.querySelector(".portfolio-caption");
+var rfc = document.querySelector(".rfc");
 var entireCart = [];
 
 init();
+
+$("#cartContainer").on("click", function(event) {
+  console.log('clicky')
+  var element = event.target;
+
+  // If that element is a button...
+  if (element.matches("button") === true) {
+    // Get its data-index value and remove the todo element from the list
+    var index = element.parentElement.getAttribute("cartitem-no");
+    entireCart.splice(index, 1);
+
+    localStorage.setItem("entireCart", JSON.stringify(entireCart));
+
+    // Re-render the list
+    storeCartItems();
+    renderCartItems();
+    
+  }
+});
 console.log(cartitem[0])
 
 
@@ -22,21 +42,16 @@ function init() {
     console.log(entireCart)
   }
 
-  //NEW COL FOR ITEM
-  var cartContainer = document.getElementById("cartContainer")
-    var div = document.createElement("div");
-    var packaging = "thePackaging"
-    cartContainer.appendChild(div);
-    div.setAttribute("data-name", cartCount);
-    div.classList.add("col-lg")
-    div.setAttribute("id", packaging)
+
+
+    cartitem.innerText = "";
 
   // Render cartitem to the DOM
-  storeCartItems();
+  storeLSItem();
   renderCartItems();
 }
 
-function storeCartItems(fontArg, imgArg, optionArg, textArg, idArg) {
+function storeLSItem(fontArg, imgArg, optionArg, textArg, idArg) {
 
   var item = {
     customfont: fontArg,
@@ -57,6 +72,7 @@ function renderCartItems() {
 
   //var arrayOfValues = Object.values(localStorage);
   //console.log(arrayOfValues)
+  
 
   var div = document.createElement("div");
   cartContainer.append(div)
@@ -80,29 +96,13 @@ function renderCartItems() {
 
   Object.keys(entireCart).forEach(index => 
      
-    $(`#cartContainer`).append(`${entireCart[index].product} ${entireCart[index].customfont} ${entireCart[index].customimg} ${entireCart[index].customtext}`)
+    $(`#cartContainer`).append(`<div class="col-lg-10 " id="itemWrapper" cartitem-no="${index}"><ul><li>${entireCart[index].product}</li> <li>${entireCart[index].customfont}</li> <li>${entireCart[index].customimg}</li> <li>${entireCart[index].customtext}</li></ul> <p><button class='rfc'cartitem-no="${index}">Remove from Cart</button></div>`)
     );
-
-  Object.keys(cartitemz).forEach(key => {
-
-    console.log(key, cartitemz[key])
-    var orderinfo = (key, cartitemz[key])
-    
-    var thePackaging = document.getElementById("thePackaging");
-
-    // Render a new li for each todo
-    var ul = document.createElement("ul");
-    var li = document.createElement("li");
-    li.innerText = orderinfo;
-    ul.append(li);
-    thePackaging.append(li);
-  })
-
-
-
-  var button = document.createElement("button");
-  button.textContent = "Remove";
-  //portfolioCaption.appendChild(button);
 
 }
 
+
+
+function removeItemFromCart() {
+  
+}
