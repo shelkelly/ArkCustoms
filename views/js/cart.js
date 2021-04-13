@@ -6,15 +6,23 @@ var cartlist = document.querySelector("#cartlist");
 var portfolioCaption = document.querySelector(".portfolio-caption");
 var rfc = document.querySelector(".rfc");
 var entireCart = [];
+var checkoutItems = [];
 
-init();
+renderCartItems();
 
-$("#cartContainer").on("click", function(event) {
+$("#checkoutbtn").on("click", function () {
+
+  checkout();
+
+
+});
+
+$("#cartContainer").on("click", function (event) {
   console.log('clicky')
   var element = event.target;
 
   // If that element is a button...
-  if (element.matches("button") === true) {
+  if (element.matches(".rfc") === true) {
     // Get its data-index value and remove the todo element from the list
     var index = element.parentElement.getAttribute("cartitem-no");
     entireCart.splice(index, 1);
@@ -22,57 +30,25 @@ $("#cartContainer").on("click", function(event) {
     localStorage.setItem("entireCart", JSON.stringify(entireCart));
 
     // Re-render the list
-    storeCartItems();
     renderCartItems();
-    
+
   }
 });
+
+
 console.log(cartitem[0])
 
 
-function init() {
-  // Get stored cartitem from localStorage
-  // Parsing the JSON string to an object
-  var cartItems = JSON.parse(localStorage.getItem("cartitem"));
 
-  // If cartitem were retrieved from localStorage, update the entireCart array to it
-  if (cartItems !== null) {
-    cartitem = cartItems;
-    entireCart = cartitem;
-    console.log(entireCart)
-  }
-
-
-
-    cartitem.innerText = "";
-
-  // Render cartitem to the DOM
-  storeLSItem();
-  renderCartItems();
-}
-
-function storeLSItem(fontArg, imgArg, optionArg, textArg, idArg) {
-
-  var item = {
-    customfont: fontArg,
-    customimg: imgArg,
-    customoption: optionArg,
-    customtext: textArg,
-    id: idArg
-  }
-
-
-  entireCart = entireCart.concat(JSON.parse(localStorage.getItem('entireCart') ||'[]'));
-  console.log(entireCart);
-  
-  localStorage.setItem("entireCart", JSON.stringify(entireCart));
-}
 
 function renderCartItems() {
 
   //var arrayOfValues = Object.values(localStorage);
   //console.log(arrayOfValues)
-  
+
+  entireCart = entireCart.concat(JSON.parse(localStorage.getItem('entireCart') || '[]'));
+  console.log(entireCart);
+
 
   var div = document.createElement("div");
   cartContainer.append(div)
@@ -80,7 +56,7 @@ function renderCartItems() {
   const newArray = entireCart.map(element => element.product);
   console.log(newArray)
 
-  for(let index in entireCart) {
+  for (let index in entireCart) {
     console.log(`${entireCart[index].product}`)
   }
 
@@ -94,15 +70,33 @@ function renderCartItems() {
     console.log(cartitemz)
   }
 
-  Object.keys(entireCart).forEach(index => 
-     
-    $(`#cartContainer`).append(`<div class="col-lg-10 " id="itemWrapper" cartitem-no="${index}"><ul><li>${entireCart[index].product}</li> <li>${entireCart[index].customfont}</li> <li>${entireCart[index].customimg}</li> <li>${entireCart[index].customtext}</li></ul> <p><button class='rfc'cartitem-no="${index}">Remove from Cart</button></div>`)
-    );
+  Object.keys(entireCart).forEach(index =>
+
+    $(`#cartContainer`).prepend(`<div class="col-lg-10 " id="itemWrapper" cartitem-no="${index}"><ul><li>${entireCart[index].product}</li> <li>${entireCart[index].itemprice}</li> <li>${entireCart[index].customfont}</li> <li>${entireCart[index].customimg}</li> <li>${entireCart[index].customtext}</li></ul> <p><button class='rfc'cartitem-no="${index}">Remove from Cart</button></div>`)
+  );
 
 }
 
+function checkout() {
+  var total = 0;
+  var itemPricesArray = [];
 
+    Object.keys(entireCart).forEach(i =>
+      itemPricesArray.push(`${entireCart[i].itemprice}`)
+    );
 
-function removeItemFromCart() {
-  
+  itemPricesArray = parseInt(itemPricesArray)
+
+    console.log(itemPricesArray)
+
+}
+
+function sumCart(itemPricesArray) {
+
+  let sum = 0;
+  for (let cartTotal of Object.values(itemPricesArray)) {
+    sum += cartTotal;
+  }
+
+  return sum; // 650
 }
