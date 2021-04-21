@@ -27,6 +27,20 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/html/cart.html"));
   })
 
+  app.get("/checkout", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/html/checkout.html"));
+  })
+  app.get("/cancel", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/html/cancel.html"));
+  })
+  app.get("/success", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/html/success.html"));
+  })
+  app.get("/cancel", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/html/cancel.html"));
+  })
+  
+
   // If no matching route is found default to home
 //  app.get("*", function(req, res) {
 //    res.sendFile(path.join(__dirname, "../public/404page"));
