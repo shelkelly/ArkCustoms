@@ -17,6 +17,7 @@ $(document).ready(function () {
         var newcartitem = {
             id: window.itemsID,
             product: $("div.portfolio-caption-heading").text(),
+            productimg: $('#productimg').attr('src'),
             customtext: $("#customText").val().trim(),
             customfont: $("#fonts").val(),
             customoption: $("#options").val(),
@@ -57,7 +58,7 @@ $(document).ready(function () {
             storeLSItem();
         }
 
-        function storeLSItem(fontArg, imgArg, optionArg, textArg, idArg, priceArg) {
+        function storeLSItem(fontArg, imgArg, optionArg, textArg, idArg, priceArg, prodimgArg) {
 
             var item = {
                 customfont: fontArg,
@@ -65,7 +66,8 @@ $(document).ready(function () {
                 customoption: optionArg,
                 customtext: textArg,
                 id: idArg,
-                itemPrice: priceArg
+                itemPrice: priceArg,
+                productimg: prodimgArg
             }
 
 

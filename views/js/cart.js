@@ -32,6 +32,7 @@ $("#cartContainer").on("click", function (event) {
     $("#cartContainer").empty();
     renderCartItems();
     sumCart();
+    location.reload();
   }
 
 });
@@ -66,7 +67,7 @@ function renderCartItems() {
 
   Object.keys(entireCart).forEach(index =>
 
-    $(`#cartContainer`).prepend(`<div class="col-lg-10 " id="itemWrapper" cartitem-no="${index}"><ul><li>${entireCart[index].product}</li> <li>$${entireCart[index].itemprice}</li> <li>${entireCart[index].customfont}</li> <li>${entireCart[index].customimg}</li> <li>${entireCart[index].customtext}</li></ul> <button class='rfc'cartitem-no="${index}">Remove from Cart</button></div>`)
+    $(`#cartContainer`).prepend(`<div class="col-lg-12" id="itemWrapper" cartitem-no="${index}"><img id="productImage" src="${entireCart[index].productimg}"><ul><li>${entireCart[index].product}</li> <li>$${entireCart[index].itemprice}</li> <li>${entireCart[index].customfont}</li> <li>${entireCart[index].customimg}</li> <li>${entireCart[index].customtext}</li></ul> <button class='rfc'cartitem-no="${index}">Remove from Cart</button></div>`)
   );
 
 }
