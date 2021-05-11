@@ -16,7 +16,7 @@ $(document).ready(function () {
 
         var newcartitem = {
             id: window.itemsID,
-            product: $("div.portfolio-caption-heading").text(),
+            product: $("#productName").text(),
             productimg: $('#productimg').attr('src'),
             customtext: $("#customText").val().trim(),
             customfont: $("#fonts").val(),

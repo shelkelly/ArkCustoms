@@ -9,24 +9,23 @@
             <div class="row">
                 {{#each product}}
 
-                <div class="col-lg">
+                <div class="col-lg-12">
                     <div class="portfolio-item" data-id={{this.id}}>
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
 
-                            <img class="img-fluid" id="productimg" src="{{this.imgurl}}" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">{{this.product}}</div>
-                            <div class="portfolio-caption-subheading text-muted" id="productPrice">{{this.price}}</div>
+                            <img class="img-fluid" id="productimg" src="{{this.imgurl}}" alt="product image" />
+
+                        <div class="col-xs-12">
+                            <div class="col-xs-6" id="dollarSign">$</div>
+                            <div class="col-xs-6" id="productPrice">{{this.price}}</div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center" id="itemInfoOptions">
+
+                    <div class="col-lg-12 mx-auto text-center" id="itemInfoOptions">
                         <h4 id="productName">{{this.product}}</h4>
                         <p class="large text-muted" id="productDescription">{{this.description}}</p>
                     </div>
-                </div>
+
 
                 {{/each}}
 
@@ -53,7 +52,7 @@
                         <!-- FONTS DROPDOWN -->
                         <div class="form-group row">
                             <div class="col-sm-2"><b>Fonts:</b></div>
-                            <div class="dropdown col-sm-2">
+                            <div class="dropdown col-sm-10">
                                 <label for="fonts">Choose a font:</label>
                                 <select id="fonts" name="fontlist" form="fontform">
                                     <option value="Arial" id="customfont">Arial</option>
@@ -66,7 +65,7 @@
                         <!-- OPTION DROPDOWN -->
                         <div class="form-group row">
                             <div class="col-sm-2"><b>Customize:</b></div>
-                            <div class="dropdown col-sm-2">
+                            <div class="dropdown col-sm-10">
                                 <label for="options">Choose another option:</label>
                                 <select id="options" name="optionlist" form="optionform">
                                     <option value="1" id="customoption">1</option>
@@ -77,11 +76,11 @@
                         </div>
 
                         <!-- IMG DROPDOWN-->
-                        <div class="form-group">
+                        <div class="form-group row">
                             <div class="col-sm-2">
                                 <label for="exampleFormControlFile1"><b>Image</b>:</b></label>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm-10">
                                 <label for="imgs">Choose one of our images:</label>
                                 <select id="imgs" name="imglist" form="imgform">
                                     <option value="cat" id="customimg">cat</option>
