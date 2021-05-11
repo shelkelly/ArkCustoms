@@ -3973,6 +3973,7 @@ input[type=button].btn-block {
   padding-bottom: 0.3125rem;
   padding-right: 0.3125rem;
   padding-left: 0.3125rem;
+  margin-right: 1rem;
   font-size: 1.25rem;
   border:1px #000 solid;
   line-height: inherit;
@@ -10175,7 +10176,7 @@ header.masthead .masthead-heading {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(40, 63, 27, 0.9);
+  background: rgba(27, 63, 45, 0.603);
   align-items: center;
   justify-content: center;
   opacity: 0;
